@@ -66,6 +66,7 @@ export const create = (state: StateFunc, keyboard: Keyboard, focused: IFocused, 
 
     return sendEvent(evtName, el, evtOptions, bubbles, cancelable, constructor, true)
   }
+  // imp 这里需要 new 的 event 是当前元素所有的 event
   const sendMouseEvent = (el, evtOptions, evtName, bubbles = false, cancelable = false) => {
     // IE doesn't have event constructors, so you should use document.createEvent('mouseevent')
     // https://dom.spec.whatwg.org/#dom-document-createevent
